@@ -1,5 +1,5 @@
 # fbpad_mkfn makefile
-CC = cc
+CC = $(CROSS_PREFIX)cc
 
 # For mkfn with stb_truetype.h
 CFLAGS = -O2 -Wall -DSTB_TRUETYPE_IMPLEMENTATION
@@ -15,6 +15,6 @@ all: mkfn
 %.o: %.c
 	$(CC) -c $(CFLAGS) $<
 mkfn: mkfn.o $(MKFN) isdw.o
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS) 
 clean:
 	rm -f *.o mkfn
