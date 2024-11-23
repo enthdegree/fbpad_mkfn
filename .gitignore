@@ -1,2 +1,6 @@
 *.ttf
 *.tf
+*.o
+mkfn
+dejavu*
+DejaVu*
